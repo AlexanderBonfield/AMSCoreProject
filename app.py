@@ -49,7 +49,8 @@ with app.app_context():
 # Route for the home page
 @app.route('/')
 def home():
-    return render_template('home.html')
+    products = Product.query.all()
+    return render_template('home.html', products=products)
 
 # Route for the about page
 @app.route('/about')
