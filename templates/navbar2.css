@@ -1,0 +1,218 @@
+
+body {
+    font-family: 'Tilt prism', sans-serif;
+    min-height: 100vh;
+}
+
+.home {
+    padding-top: 100px; /* Adjust the value to move the content down */
+}
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+/* Additional styles for the heading and slogan */
+#main-heading {
+    font-size: 2rem; /* Optional: Adjust the font size */
+    color: #000000;  /* Optional: Change the color */
+}
+
+#slogan {
+    font-size: 1.5rem; /* Optional: Adjust the font size */
+    color: #555555;   /* Optional: Change the color */
+}
+
+.nav div.logo a:hover {
+    color: #af4e0c;
+}
+
+
+/* Navbar section */
+
+
+.nav {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    line-height: 65px;
+    text-align: center;
+}
+
+.nav div.logo {
+    float: left;
+    width: auto;
+    height: auto;
+    padding-left: 3rem;
+}
+
+.nav div.logo a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 2.5rem;
+}
+
+
+
+.nav div.main_list {
+    height: 65px;
+    float: right;
+}
+
+.nav div.main_list ul {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding: 0;
+    padding-right: 3rem;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #000000;
+    line-height: 65px;
+    font-size: 2.4rem;
+}
+
+.nav div.main_list ul li a:hover {
+    color: #af4e0c;
+}
+
+/* Media query section */
+
+@media screen and (max-width:768px) {
+    .navTrigger {
+        display: block;
+    }
+    .nav div.logo {
+        margin-left: 15px;
+    }
+    .nav div.main_list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+    .nav div.show_list {
+        height: auto;
+        display: none;
+    }
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #111;
+    }
+    .nav div.main_list ul li {
+        width: 100%;
+        text-align: right;
+    }
+    .nav div.main_list ul li a {
+        text-align: center;
+        width: 100%;
+        font-size: 3rem;
+        padding: 20px;
+    }
+    .nav div.media_button {
+        display: block;
+    }
+}
+
+/* Animation section */
+/* This part contains the styles for the "hamburger" menu animation */
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #fff;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+/* Make navigation links smaller */
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #000000;
+    line-height: 65px;
+    font-size: 1.4rem; /* Adjust the font size as needed */
+}
+
+/* Keep the logo at its original size */
+.nav div.logo a {
+    font-size: 2.6rem; /* Original font size */
+}
+
+/* Styling for the cart icon */
+.cart-icon {
+    color: #000000;
+    font-size: 2rem;
+    padding: 0 1rem; /* Adjust the padding as needed */
+}
+
+.cart-icon:hover {
+    color: #af4e0c;
+}
+
+/* Adjust the position of the cart icon */
+.nav div.main_list ul li.cart-icon {
+    padding: 0; /* Reset padding for cart icon */
+    margin-left: auto; /* Push the cart icon to the right */
+}
+
+.content {
+    /* Add styles for the main content, e.g., padding, margin, etc. */
+    flex: 1; /* Allow the content to take up the remaining vertical space */
+}
+
+/*footer {
+    /* Styles for the footer, e.g., background, text color, padding, etc. */
+    /*flex-shrink: 0; /* Prevent the footer from shrinking */
+/*}
+
+/*.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/*.content {
+    /* Styles for the main content area */
+    /*padding-bottom: 10px; /* Adjust the value to leave space for the footer */
+/*}
+
+/*footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px; /* Set the height of the footer */
+    /*background-color: #ffffff;
+    text-align: center;
+    line-height: 50px;
+    /* Additional styles for the footer */
+/*}
