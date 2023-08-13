@@ -112,4 +112,3 @@ with app.app_context():
     db.session.add(new_product11)
     db.session.add(new_product12)
     db.session.commit()
-    
