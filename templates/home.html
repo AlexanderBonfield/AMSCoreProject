@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayou Guitars</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="#">Bayou Guitars</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="{{ url_for('home') }}">All Guitars</a></li>
+                    <li><a href="{{ url_for('fenders') }}">Fender</a></li>
+                    <li><a href="{{ url_for('gibson') }}">Gibson</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact us</a></li>
+                    <li><a href="{{ url_for('cart') }}">Cart</a></li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+    
+    <div class="wrapper">
+    <!-- Main Content Area -->
+        <div class="content">
+            <!-- Add content here for each page using templates or placeholders -->
+            <!-- Example: Home Page -->
+            <div class="home">
+                <div class = "center-content">
+
+                    <h1 id = "main-heading">Welcome</h1>
+                    <p id = "slogan"></p>
+                </div>
+            </div>
+
+            <!-- Example: Product Listing Page -->
+            <div class="product-list">
+                <h2>Products</h2>
+                <div class="product-items">
+                    {% for product in products %}
+                      <div class="product-item">
+                        <img src="{{ product.image_url }}" alt="{{ product.name }}">
+                        <h3>{{ product.name }}</h3>
+                        <p>Price: ${{ product.price }}</p>
+                      </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Product listing goes here -->
+            </div>
+
+            <!-- Add similar sections for other pages -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Bayou Guitars</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
