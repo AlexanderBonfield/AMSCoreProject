@@ -79,7 +79,7 @@ with app.app_context():
         make="Gibson",
         description="Iconic. There's simply no other way to describe the Strat. It's thrived throughout decades of music.",
         price="2199.00",
-        image_url="The Les Paul Standard Faded '60s is here to take you back to Gibson's golden era."
+        image_url="https://d1aeri3ty3izns.cloudfront.net/media/85/859940/600/preview.jpg"
     )
 
     new_product11 = Product(

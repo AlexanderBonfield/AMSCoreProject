@@ -46,6 +46,7 @@ with app.app_context():
 
 
 
+
 # Route for the home page
 @app.route('/')
 def home():
@@ -64,7 +65,8 @@ def contact():
 
 @app.route('/fenders')
 def fenders():
-    return render_template('fenders.html')
+    fender_guitars = Product.query.filter_by(make = "fender").all()
+    return render_template('fenders.html', fender_guitars=fender_guitars)
 
 @app.route('/gibson')
 def gibson():
