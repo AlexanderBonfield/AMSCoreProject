@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
 
+    <!-- Add your CSS link(s) here for styling -->
 </head>
 <body>
     <!-- Navigation -->
@@ -25,7 +26,7 @@
                     <li><a href="{{ url_for('gibson') }}">Gibson</a></li>
                     <li><a href="{{ url_for('about') }}">About</a></li>
                     <li><a href="{{ url_for('contact') }}">Contact us</a></li>
-                    <li><a href="{{ url_for('cart') }}">Cart</a></li>
+                    <li><a href="{{ url_for('cart') }}"><i class ="fas fa-shopping-cart"></i>Cart</a></li>
                 </ul>
             </div>
             <span class="navTrigger">
@@ -44,26 +45,12 @@
             <div class="home">
                 <div class = "center-content">
 
-                    <h1 id = "main-heading">Welcome to the Bayou</h1>
-                    <p id = "slogan"></p>
+                    <h1 id = "main-heading">Thanks for shopping with Baypu Guitars</h1>
+                    
                 </div>
             </div>
 
             <!-- Example: Product Listing Page -->
-            <div class="product-list">
-                <h2>Gibson Guitars </h2>
-                <div class="product-item">
-                    {% for product in gibson_guitars %}
-                        <div class="product-items">
-                            <a href="{{ url_for('guitar_details', guitar_id=product.id) }}">
-                                <img src="{{ product.image_url }}" alt="{{ product.name }}">
-                                <h3>{{ product.name }}</h3>
-                                <p>£ {{ product.price }}</p>
-                            </a>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
             
 
             <!-- Add similar sections for other pages -->
@@ -77,5 +64,4 @@
     <script src="script.js"></script>
 </body>
 </html>
-
 

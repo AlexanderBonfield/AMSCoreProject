@@ -45,22 +45,36 @@
             <div class="home">
                 <div class = "center-content">
 
-                    <h1 id = "main-heading">Contact Us @</h1>
-                    <p id = "slogan">102 Hemingway Road</p>
-                    <p id = "slogan">E4 N76</p>
-                    <p id = "slogan">Hackney, London</p>
-                    <h1 id = "main-heading">Or email us @</h1>
-                    <p id = "slogan">contact@bayouguitars.com</p>
+                    <h1 id = "main-heading">Payment/h1>
+                        <form action="{{ url_for('process_payment') }}" method="post">
+                            <!-- Payment form fields -->
+                            <label for="first_name">First Name:</label>
+                            <input type="text" id="first_name" name="first_name" required>
+                    
+                            <label for="last_name">Last Name:</label>
+                            <input type="text" id="last_name" name="last_name" required>
+                    
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                    
+                            <label for="postcode">Postcode:</label>
+                            <input type="text" id="postcode" name="postcode" required>
+                    
+                            <label for="address_number">House/Flat Number:</label>
+                            <input type="text" id="address_number" name="address_number" required>
+                            <p>PAYMENT GATEWAY</p>
+                    
+                            <!-- Include fields for payment information, such as credit card details -->
+                            <input type="hidden" name="quantity" value="{{ quantity }}">
+                            <input type="hidden" name="guitar_id" value="{{ guitar_id }}">
+                            <input type="hidden" name="product_id" value="{{ product_id }}">
+                            <button type="submit">Complete Payment</button>
+                        </form>
+                        
                 </div>
             </div>
 
-            <!-- Example: Product Listing Page -->
-            <div class="product-list">
-                <h2></h2>
-                <!-- Product listing goes here -->
-            </div>
-
-            <!-- Add similar sections for other pages -->
+            
         </div>
     </div>
 

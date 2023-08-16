@@ -198,6 +198,19 @@ footer {
     flex: 1; /* Allow the content to take up the remaining vertical space */
 }
 
+/* Apply custom styles to guitar names and prices */
+.guitar-name, .guitar-price, .footboy {
+    color: black; /* Set the desired text color for guitar names and prices */
+    text-decoration: none !important;  /* Remove underlines */
+}
+
+/* CSS Stylesheet */
+.product-item a {
+    color: #000; /* Change this to your desired text color */
+    text-decoration: none; /* Remove underline */
+}
+
+
 
 /*.wrapper {
     min-height: 100%;

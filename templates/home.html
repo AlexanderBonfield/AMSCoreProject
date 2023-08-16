@@ -55,9 +55,10 @@
                 <div class="product-items">
                     {% for product in products %}
                       <div class="product-item">
+                        <a href = "{{ url_for('guitar_details', guitar_id=product.id) }}">
                         <img src="{{ product.image_url }}" alt="{{ product.name }}">
-                        <h3>{{ product.name }}</h3>
-                        <p> £ {{ product.price }}</p>
+                        <h3><span class="guitar-name">{{ product.name }}</span></h3>
+                        <p><span class="guitar-price">£{{ product.price }}</span></p>
                       </div>
                     {% endfor %}
                 </div>
@@ -70,7 +71,7 @@
     </div>
 
     <!-- Footer -->
-    <footer>
+    <footer class = "footboy">
         <p>&copy; 2023 Bayou Guitars</p>
     </footer>
     <script src="script.js"></script>
