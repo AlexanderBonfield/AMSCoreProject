@@ -42,29 +42,36 @@
             <!-- Add content here for each page using templates or placeholders -->
             <!-- Example: Home Page -->
             <div class="home">
-                <div class = "center-content">
-
-                    <h1 id = "main-heading">Welcome to the Bayou</h1>
-                    <p id = "slogan"></p>
-                </div>
+              
             </div>
 
             <!-- Example: Product Listing Page -->
             <div class="product-list">
-                <h2>Gibson Guitars </h2>
-                <div class="product-item">
-                    {% for product in gibson_guitars %}
-                        <div class="product-items">
-                            <a href="{{ url_for('guitar_details', guitar_id=product.id) }}">
-                                <img src="{{ product.image_url }}" alt="{{ product.name }}">
-                                <h3>{{ product.name }}</h3>
-                                <p>£ {{ product.price }}</p>
-                            </a>
-                        </div>
-                    {% endfor %}
+                
+                <div class="guitar-details">
+                    <h2>{{ guitar.name }}</h2>
+                    <img src="{{ guitar.image_url }}" alt="{{ guitar.name }}">
+                    <p>Price: £{{ guitar.price }}</p>
+                    <p>Description: {{ guitar.description }}</p>
+                    <form action="{{ url_for('add_to_cart', guitar_id=guitar.id, guitar_name=guitar.name, guitar_price=guitar.price) }}" method="post">
+                        <label for="quantity">Select Quantity:</label>
+                        <select id="quantity" name="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="3">5</option>
+                            <option value="3">6</option>
+        
+                        </select>
+                        <button type="submit">Add to Cart</button>
+                    </form>
+                
+                    
+                    
                 </div>
+
+                <!-- Product listing goes here -->
             </div>
-            
 
             <!-- Add similar sections for other pages -->
         </div>
@@ -77,5 +84,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
